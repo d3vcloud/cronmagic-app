@@ -1,0 +1,21 @@
+{
+  "name": "cron-magic-generator-app",
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "serve": "vite preview"
+  },
+  "devDependencies": {
+    "standard": "^16.0.4",
+    "vite": "^2.6.4"
+  },
+  "dependencies": {
+    "cron-parser": "^4.1.0",
+    "cronstrue": "^1.122.0",
+    "dayjs": "^1.10.7"
+  },
+  "eslintConfig": {
+    "extends": "./node_modules/standard/eslintrc.json"
+  }
+}

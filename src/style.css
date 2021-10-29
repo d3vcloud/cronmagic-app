@@ -1,0 +1,143 @@
+body {
+  font-family: 'Montserrat', helvetica, arial, sans-serif;
+}
+
+:root {
+  --white: #fff;
+  --black: #000;
+}
+
+#app {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  -webkit-box-pack: center;
+  -webkit-box-align: center;
+  align-items: center;
+  height: 100%;
+  /* max-width: 100%; */
+}
+
+.navbar {
+  color: white;
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  width: 100%;
+  -webkit-box-pack: end;
+  justify-content: flex-end;
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  margin-right: 30px;
+}
+
+.contribute-link {
+  text-decoration: none;
+  padding: 10px;
+  display: inline-block;
+  font-weight: 500;
+  font-size: 16px;
+  border-radius: 3px;
+  background-color: rgb(56, 43, 95);
+  color: white;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.header {
+  color: #192a56;
+  font-size: 25px;
+  font-weight: bold;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  text-align: center;
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  width: 100%;
+  max-width: 768px;
+}
+
+.ct-converter {
+  align-items: center;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0px 0px 1rem;
+  transition: all 0.2s ease-out 0s;
+  width: 100%;
+}
+
+.ct-cron-input {
+  display: flex;
+  margin-bottom: 20px;
+  width: inherit;
+}
+
+.cron-input {
+  border-radius: 3px;
+  color: #273c75;
+  font-size: 50px;
+  border-style: solid;
+  border-radius: 15px;
+  outline: transparent;
+  text-align: center;
+  width: 100%;
+  /* background-color: rgb(56, 43, 95); */
+  /* border: none; */
+}
+
+/* .ct-cron-input input::selection {
+  color: #ffff80;
+  background-color: rgba(255, 255, 128, 0.2);
+} */
+
+
+.ct-result-string {
+  display: flex;
+  padding: 10px;
+  margin-left: 20px;
+  font-weight: bold;
+  color: #273c75;
+  font-size: 22px;
+  -webkit-box-align: center;
+  align-items: center;
+}
+
+.ct-examples {
+  display: flex;
+  width: 100%;
+  -webkit-box-pack: start;
+  justify-content: start;
+  flex-direction: column;
+  background: rgb(255, 255, 255);
+  border: 1px solid rgb(233, 228, 247);
+  border-radius: 4px;
+  box-shadow: rgb(48 71 89 / 5%) 0px 0px 10px;
+  margin: 0px 0px 1rem;
+  transition: all 0.2s ease-out 0s;
+  padding: 40px;
+}
+
+.ct-examples span {
+  color: rgb(61, 72, 82);
+  padding-bottom: 10px;
+  padding-top: 5px;
+}
+
+.ct-examples table {
+  border: 1px solid rgb(233, 228, 247);
+  border-collapse: collapse;
+  border-spacing: 0px;
+  font-size: 12px;
+  box-shadow: rgb(48 71 89 / 5%) 0px 0px 10px;
+}

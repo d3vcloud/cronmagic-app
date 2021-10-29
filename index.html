@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>cron magic converter</title>
+    <meta name="description" content="Free online tool lets you build Cron expression or converts one in readable text format easily"/>
+    <meta name="keywords" content="cron, cron expression, cron schedule, cron expression syntax, cron syntax" />
+    <!-- <link rel="icon" type="image/svg+xml" href="favicon.svg" /> -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./src/style.css">
+  </head>
+  <body>
+    <div id="app">
+      <nav class="navbar">
+        <ul>
+          <li>
+            <a href="https://github.com/d3vcloud" class="contribute-link">Contribute</a>
+          </li>
+        </ul>
+      </nav>  
+      <header class="header">
+        <h1>cron magic generator</h1>
+      </header>
+      <section class="section">
+        <div class="ct-converter">
+          <div class="ct-cron-input">
+            <input type="text" id="cronExpression" name="cronExpression" class="cron-input" value= '* * * * *' autofocus>
+          </div>
+          <div class="ct-result-string">
+            <span>Every minute, every hour, every day</span>
+          </div>
+        </div>
+        <div class="ct-examples">
+          <span>
+            The cron expression is made of five fields. Each field can have the following values.
+          </span>
+          <table>
+            <thead>
+              <tr>
+                <th>*</th>
+                <th>*</th>
+                <th>*</th>
+                <th>*</th>
+                <th>*</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>minute (0-59)</td>
+                <td>hour (0 - 23)</td>
+                <td>day of the month (1 - 31)</td>
+                <td>month (1 - 12)</td>
+                <td>day of the week (0 - 6)</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+      <footer>
+        Build using vite and typescript
+      </footer>
+    </div>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <script type="module" src="./src/main.js"></script>
+  </body>
+</html>
