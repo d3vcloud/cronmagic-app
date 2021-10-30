@@ -2,14 +2,23 @@ import { getCronDescription } from './utils/converter'
 
 const cronExpression = document.querySelector('#cronExpression')
 const resultExpression = document.querySelector('.ct-result-string span')
+const list = document.querySelector('.list')
 
 // console.log(cronstrue.toString('0 0 * * * 1L',{ verbose: true }))
 cronExpression.addEventListener('paste', e => {
   setTimeout(() => {
     const { status, ...data } = getCronDescription(e.target.value)
     if (status) {
-      console.log(data)
-      resultExpression.textContent = data.resultString
+      const { listExecutions, resultString } = data
+      resultExpression.textContent = resultString
+      if (listExecutions.length > 0) {
+        let listDates
+        listExecutions.forEach(item => {
+          listDates += `<li class="list-item"><span>${ item }</span></li>`
+        })
+
+        list.innerHTML = listDates
+      }
     } else {
       console.log(data)
     }

@@ -92,15 +92,12 @@ body {
   outline: transparent;
   text-align: center;
   width: 100%;
-  /* background-color: rgb(56, 43, 95); */
-  /* border: none; */
 }
 
 /* .ct-cron-input input::selection {
   color: #ffff80;
   background-color: rgba(255, 255, 128, 0.2);
 } */
-
 
 .ct-result-string {
   display: flex;
@@ -122,7 +119,6 @@ body {
   background: rgb(255, 255, 255);
   border: 1px solid rgb(233, 228, 247);
   border-radius: 4px;
-  box-shadow: rgb(48 71 89 / 5%) 0px 0px 10px;
   margin: 0px 0px 1rem;
   transition: all 0.2s ease-out 0s;
   padding: 40px;
@@ -137,7 +133,63 @@ body {
 .ct-examples table {
   border: 1px solid rgb(233, 228, 247);
   border-collapse: collapse;
-  border-spacing: 0px;
+  border-spacing: 0px; 
   font-size: 12px;
-  box-shadow: rgb(48 71 89 / 5%) 0px 0px 10px;
+}
+
+/*Cards*/
+.cards {
+  background: #fefefe;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px 0 rgb(24 28 33 / 12%);
+  width: inherit;
+  height: 550px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 23px;
+  min-width: 0;
+  margin-bottom: 30px;
+}
+
+.card-body {
+  flex: 1 1 auto;
+  padding: 25px
+}
+
+.card-item-title {
+  display: flex;
+  flex-direction: column;
+}
+
+.card-item-title span {
+  position: absolute;
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 1;
+  color:#2f3640;
+}
+
+.card-item-body {
+  display: flex;
+  align-items: flex-end;
+  margin-top: 4rem;
+  color: #353b48;
+}
+
+.list {
+  padding: 0;
+  margin: 0;
+}
+
+.list-item {
+  display: flex;
+  border-radius: 6px;
+  margin-bottom: 15px;
+}
+
+.list-item span{
+  font-size: 15px;
+  font-weight: 500;
+  color: #353b48;
 }
