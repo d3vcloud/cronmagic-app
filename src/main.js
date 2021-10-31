@@ -1,65 +1,40 @@
 import { getCronDescription } from './utils/converter'
+import { CRON_EXAMPLES } from './constants/examples'
 
 const cronExpression = document.querySelector('#cronExpression')
 const resultExpression = document.querySelector('.ct-result-string span')
-const list = document.querySelector('.list')
+const tableExecutions = document.querySelector('.table-executions').getElementsByTagName('tbody')[0]
+const tableExamples = document.querySelector('.table-examples').getElementsByTagName('tbody')[0]
 
-// console.log(cronstrue.toString('0 0 * * * 1L',{ verbose: true }))
 cronExpression.addEventListener('paste', e => {
+  cronExpression.value = ''
   setTimeout(() => {
     const { status, ...data } = getCronDescription(e.target.value)
     if (status) {
+      resultExpression.classList.remove('invalid')
+      cronExpression.classList.remove('invalid')
       const { listExecutions, resultString } = data
       resultExpression.textContent = resultString
       if (listExecutions.length > 0) {
-        let listDates
+        let listDates = ''
         listExecutions.forEach(item => {
-          listDates += `<li class="list-item"><span>${ item }</span></li>`
+          listDates += `<tr><td>${ item.date }</td><td>${ item.hour }</td></tr>`
         })
 
-        list.innerHTML = listDates
+        tableExecutions.innerHTML = listDates
       }
     } else {
-      console.log(data)
+      resultExpression.textContent = 'Invalid expression'
+      resultExpression.classList.add('invalid')
+      cronExpression.classList.add('invalid')
     }
-  }, 100)
+  }, 500)
 })
 
-/*
-const mapStateToProps = () => ({
-  cronExpressions: [
-    {
-      expression: '* * * * *',
-      schedule: 'Every minute'
-    },
-    {
-      expression: '0 * * * *',
-      schedule: 'Every hour'
-    },
-    {
-      expression: '0 0 * * *',
-      schedule: 'Every day at 12:00 AM'
-    },
-    {
-      expression: '0 0 * * FRI',
-      schedule: 'At 12:00 AM, only on Friday'
-    },
-    {
-      expression: '0 0 1 * *',
-      schedule: 'At 12:00 AM, on day 1 of the month'
-    }
-  ],
-  helpers: [
-    'minute (0-59)',
-    'hour (0 - 23)',
-    'day of the month (1 - 31)',
-    'month (1 - 12)',
-    'day of the week (0 - 6)'
-  ]
-})
-
-export const HelperContainer = connect(
-  mapStateToProps,
-  null
-)(Helper)
-*/
+;(() => {
+  let rows = ''
+  CRON_EXAMPLES.forEach(example => {
+    rows += `<tr><td class>${ example.expression }</td><td>${ example.schedule }</td></tr>`
+  })
+  tableExamples.innerHTML = rows
+})()

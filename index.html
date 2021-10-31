@@ -10,15 +10,27 @@
     <!-- <link rel="icon" type="image/svg+xml" href="favicon.svg" /> -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./src/style.css">
+    <link rel="stylesheet" href="./src/styles/theme.css">
   </head>
   <body>
     <div id="app">
       <nav class="navbar">
-        <ul>
+        <button class="switch" id="switch">
+          <span>
+            <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" >
+              <path d="M16 26c1.105 0 2 0.895 2 2v2c0 1.105-0.895 2-2 2s-2-0.895-2-2v-2c0-1.105 0.895-2 2-2zM16 6c-1.105 0-2-0.895-2-2v-2c0-1.105 0.895-2 2-2s2 0.895 2 2v2c0 1.105-0.895 2-2 2zM30 14c1.105 0 2 0.895 2 2s-0.895 2-2 2h-2c-1.105 0-2-0.895-2-2s0.895-2 2-2h2zM6 16c0 1.105-0.895 2-2 2h-2c-1.105 0-2-0.895-2-2s0.895-2 2-2h2c1.105 0 2 0.895 2 2zM25.899 23.071l1.414 1.414c0.781 0.781 0.781 2.047 0 2.828s-2.047 0.781-2.828 0l-1.414-1.414c-0.781-0.781-0.781-2.047 0-2.828s2.047-0.781 2.828 0zM6.101 8.929l-1.414-1.414c-0.781-0.781-0.781-2.047 0-2.828s2.047-0.781 2.828 0l1.414 1.414c0.781 0.781 0.781 2.047 0 2.828s-2.047 0.781-2.828 0zM25.899 8.929c-0.781 0.781-2.047 0.781-2.828 0s-0.781-2.047 0-2.828l1.414-1.414c0.781-0.781 2.047-0.781 2.828 0s0.781 2.047 0 2.828l-1.414 1.414zM6.101 23.071c0.781-0.781 2.047-0.781 2.828 0s0.781 2.047 0 2.828l-1.414 1.414c-0.781 0.781-2.047 0.781-2.828 0s-0.781-2.047 0-2.828l1.414-1.414z"></path>
+              <path d="M16 8c-4.418 0-8 3.582-8 8s3.582 8 8 8c4.418 0 8-3.582 8-8s-3.582-8-8-8zM16 21c-2.761 0-5-2.239-5-5s2.239-5 5-5 5 2.239 5 5-2.239 5-5 5z"></path>
+            </svg>
+          </span>
+          <span>
+            <svg width="48" height="48" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" ><path fill="#fff" stroke="#fff" d="M21.837 17.831v0c0.088-0.351 0.142-0.716 0.158-1.091-0.468 0.165-0.971 0.254-1.495 0.254-2.485 0-4.5-2.015-4.5-4.5 0-0.524 0.090-1.027 0.254-1.495-0.374 0.016-0.739 0.070-1.091 0.158-2.392 0.597-4.164 2.76-4.164 5.336 0 3.038 2.462 5.5 5.5 5.5 2.577 0 4.739-1.772 5.337-4.163zM12 16.495c0-1.961 1.255-3.63 3.005-4.246-0.004 0.082-0.005 0.163-0.005 0.246 0 3.038 2.462 5.5 5.5 5.5 0.082 0 0.164-0.002 0.246-0.005-0.616 1.751-2.285 3.005-4.246 3.005-2.485 0-4.5-2.015-4.5-4.5v0z" /></svg>
+          </span>
+         </button>
+        <!-- <ul>
           <li>
             <a href="https://github.com/d3vcloud" class="contribute-link">Contribute</a>
           </li>
-        </ul>
+        </ul> -->
       </nav>  
       <header class="header">
         <h1>cron magic generator</h1>
@@ -32,49 +44,28 @@
             <span>Every minute, every hour, every day</span>
           </div>
         </div>
-        <!-- <div class="ct-examples">
-          <span>
-            The cron expression is made of five fields. Each field can have the following values.
-          </span>
-           <table>
-            <thead>
-              <tr>
-                <th>*</th>
-                <th>*</th>
-                <th>*</th>
-                <th>*</th>
-                <th>*</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>minute (0-59)</td>
-                <td>hour (0 - 23)</td>
-                <td>day of the month (1 - 31)</td>
-                <td>month (1 - 12)</td>
-                <td>day of the week (0 - 6)</td>
-              </tr>
-            </tbody>
-          </table>
-        </div> -->
         <!--Card executions-->
         <div class="cards">
           <div class="card-body">
             <div class="card-item">
               <div class="card-item-title">
-                <span>Proximas ejecuciones</span>
+                <span>Next ocurrences</span>
               </div>
               <div class="card-item-body">
-                <ul class='list'>
-                  <!-- <li class="list-item">
-                    <span>Primera ejecucion de XXXX</span>
-                  </li> -->
-                </ul>
+                <table class="table table-executions">
+                  <thead>
+                    <tr>
+                      <th class="wd-30">Date</th>
+                      <th class="">Hour</th>
+                    </tr>
+                  </thead>
+                  <tbody></tbody>
+                </table>
               </div>
             </div>
           </div>
         </div>
-        <!--Card example-->
+        <!--Card examples-->
         <div class="cards">
           <div class="card-body">
             <div class="card-item">
@@ -82,7 +73,53 @@
                 <span>Examples</span>
               </div>
               <div class="card-item-body">
-                Espero que toodo este yendo mejor que antes
+                <table class="table table-examples">
+                  <thead>
+                    <tr>
+                      <th class="wd-20">Cron expression</th>
+                      <th class="">Schedule</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--Card sintaxis-->
+        <div class="cards">
+          <div class="card-body">
+            <div class="card-item">
+              <div class="card-item-title">
+                <span>Sintaxis</span>
+              </div>
+              <div class="card-item-body">
+                <table class="table table-sintaxis">
+                  <thead>
+                    <tr>
+                      <th>Seconds</th>
+                      <th>Minutes</th>
+                      <th>Hours</th>
+                      <th>Day of Month</th>
+                      <th>Month</th>
+                      <th>Day of Week</th>
+                      <th>Year</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>0 - 59</td>
+                      <td>0 - 59</td>
+                      <td>0 - 23</td>
+                      <td>1 - 31</td>
+                      <td>1-12 o JAN-DEC</td>
+                      <td>1-7 o SUN-SAT</td>
+                      <td>1970-2199</td>
+                    </tr>
+                  </tbody>
+                </table>
               </div>
             </div>
           </div>
@@ -90,7 +127,7 @@
         
       </section>
       <footer>
-        Build using vite and typescript
+        Build using vite and javascript
       </footer>
     </div>
     <noscript>You need to enables JavaScript to run this app.</noscript>

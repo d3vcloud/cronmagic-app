@@ -2,11 +2,11 @@ import cronstrue from 'cronstrue'
 import parser from 'cron-parser'
 import dayjs from 'dayjs'
 
-const MAX_NEXT_EXECUTIONS = 8
+const MAX_NEXT_EXECUTIONS = 10
 
 export const getCronDescription = (cron = '* * * * * *') => {
   try {
-    const interval = parser.parseExpression(cron)
+    const interval = parser.parseExpression('* * * * * *')
     return {
       status: true,
       resultString: cronstrue.toString(cron, { verbose: true }),
@@ -26,7 +26,11 @@ const getNextExecutions = (interval) => {
     while (i <= MAX_NEXT_EXECUTIONS) {
       try {
         const obj = interval.next()
-        nextExecutions.push(dayjs(obj.toString()).format('DD-MM-YYYY HH:mm:ss'))
+        const item = {
+          date: dayjs(obj.toString()).format('DD-MM-YYYY'),
+          hour: dayjs(obj.toString()).format('HH:mm:ss')
+        }
+        nextExecutions.push(item)
         i++
       } catch (e) {
         break
