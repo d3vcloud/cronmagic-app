@@ -1,7 +1,37 @@
-.dark {
-  background: var(--);
+body.dark {
+  background-color: var(--bg-dark);
   transition: .3s ease all;
 } 
+
+body.dark .header {
+  color: var(--yellow-bold);
+}
+
+body.dark .ct-result-string {
+  color: var(--yellow);
+}
+
+body.dark .cron-input {
+  background-color: var(--bg-dark);
+  color: var(--yellow);
+}
+
+body.dark .cards {
+  background-color: var(--gray);
+  /* box-shadow: 10px 10px 20px rgba(0,0,0,.20); */
+}
+
+body.dark .card-item-title span{
+  color: var(--bg-light);
+}
+
+body.dark .table thead th {
+  color: var(--bg-light);
+}
+
+body.dark .table td {
+  color: var(--bg-light);
+}
 
 .switch {
   background-color: var(--blue);
@@ -26,7 +56,7 @@
   content: '';
   display: block;
   width: 30px;
-  height: 30px;
+  height: 32px;
   position: absolute;
   background: #f1f1f1;
   top: 0;
@@ -38,7 +68,7 @@
 }
 
 .switch.active {
-  background: orange;
+  background: var(--yellow);
   color: #000;
 }
 

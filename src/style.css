@@ -1,15 +1,19 @@
 :root {
+  --bg-light: #f5f6fa;
+  --bg-dark: #2f3640;
   --white: #fff;
   --black: #000;
   --gray: #353b48;
   --red: #e84118;
   --blue: #192a56;
   --blue-bold: #273c75;
+  --yellow: #fbc531;
+  --yellow-bold: #e1b12c;
 }
 
 body {
   font-family: 'Montserrat', helvetica, arial, sans-serif;
-  background-color: #f5f6fa;
+  background-color: var(--bg-light);
 }
 
 #app {
@@ -22,7 +26,6 @@ body {
   padding-right: 25px;
   -webkit-box-pack: center;
   -webkit-box-align: center;
-  
 }
 
 .navbar {
@@ -105,11 +108,6 @@ body {
   border-color: var(--red);
 }
 
-/* .ct-cron-input input::selection {
-  color: #ffff80;
-  background-color: rgba(255, 255, 128, 0.2);
-} */
-
 .ct-result-string {
   display: flex;
   padding: 10px;
@@ -129,14 +127,12 @@ body {
 .ct-examples {
   display: flex;
   width: 100%;
-  -webkit-box-pack: start;
   justify-content: start;
   flex-direction: column;
   background: rgb(255, 255, 255);
   border: 1px solid rgb(233, 228, 247);
   border-radius: 4px;
   margin: 0px 0px 1rem;
-  transition: all 0.2s ease-out 0s;
   padding: 40px;
 }
 
@@ -160,7 +156,6 @@ body {
   border-radius: 15px;
   box-shadow: 0 10px 30px 0 rgb(24 28 33 / 12%);
   width: inherit;
-  /* height: 550px; */
   position: relative;
   display: flex;
   flex-direction: column;
@@ -196,10 +191,9 @@ body {
 
 .table {
   width: 100%;
-  /* border: 1px solid #dcdde1; */
 }
 
-.table thead th {
+.table th {
   padding: 11px 15px;
   color: var(--gray);
   font-size: 14px;
@@ -208,9 +202,10 @@ body {
   text-transform: uppercase;
 }
 
-table td {
+.table td {
   padding: 11px 15px;
   color: var(--gray);
+  font-size: 14px;
 }
 
 .wd-30 {
@@ -223,6 +218,10 @@ table td {
 
 .wd-50 {
   width: 50%;
+}
+
+.wd-70 {
+  width: 70%;
 }
 
 /* 
@@ -246,3 +245,4 @@ table td {
 .item-date {
   margin-right: 20px;
 } */
+

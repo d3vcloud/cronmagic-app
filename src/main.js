@@ -1,3 +1,4 @@
+import { savePreferences } from './utils/preferences'
 import { getCronDescription } from './utils/converter'
 import { CRON_EXAMPLES } from './constants/examples'
 
@@ -5,6 +6,18 @@ const cronExpression = document.querySelector('#cronExpression')
 const resultExpression = document.querySelector('.ct-result-string span')
 const tableExecutions = document.querySelector('.table-executions').getElementsByTagName('tbody')[0]
 const tableExamples = document.querySelector('.table-examples').getElementsByTagName('tbody')[0]
+const btnSwitch = document.querySelector('#switch')
+
+;(() => {
+  if (window.localStorage.getItem('theme') === 'dark') {
+    document.body.classList.add('dark')
+  }
+  let rows = ''
+  CRON_EXAMPLES.forEach(example => {
+    rows += `<tr><td class>${ example.expression }</td><td>${ example.schedule }</td></tr>`// eslint-disable-line
+  })
+  tableExamples.innerHTML = rows
+})()
 
 cronExpression.addEventListener('paste', e => {
   cronExpression.value = ''
@@ -18,7 +31,7 @@ cronExpression.addEventListener('paste', e => {
       if (listExecutions.length > 0) {
         let listDates = ''
         listExecutions.forEach(item => {
-          listDates += `<tr><td>${ item.date }</td><td>${ item.hour }</td></tr>`
+          listDates += `<tr><td>${ item.date }</td><td>${ item.hour }</td></tr>`// eslint-disable-line
         })
 
         tableExecutions.innerHTML = listDates
@@ -31,10 +44,9 @@ cronExpression.addEventListener('paste', e => {
   }, 500)
 })
 
-;(() => {
-  let rows = ''
-  CRON_EXAMPLES.forEach(example => {
-    rows += `<tr><td class>${ example.expression }</td><td>${ example.schedule }</td></tr>`
-  })
-  tableExamples.innerHTML = rows
-})()
+btnSwitch.addEventListener('click', () => {
+  document.body.classList.toggle('dark')
+  btnSwitch.classList.toggle('active')
+  // Save preferences on localstorage
+  savePreferences()
+})

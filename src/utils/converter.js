@@ -6,7 +6,7 @@ const MAX_NEXT_EXECUTIONS = 10
 
 export const getCronDescription = (cron = '* * * * * *') => {
   try {
-    const interval = parser.parseExpression('* * * * * *')
+    const interval = parser.parseExpression(cron)
     return {
       status: true,
       resultString: cronstrue.toString(cron, { verbose: true }),
