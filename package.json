@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "dev": "vite",
+    "lint":"standard",
     "build": "vite build",
     "serve": "vite preview"
   },
