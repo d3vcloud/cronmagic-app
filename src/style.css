@@ -11,17 +11,37 @@
   --yellow-bold: #e1b12c;
 }
 
+/* Utilies */
+.wd-30 {
+  width: 30%;
+}
+
+.wd-20 {
+  width: 20%;
+}
+
+.wd-50 {
+  width: 50%;
+}
+
+.wd-60 {
+  width: 60%;
+}
+
+.wd-70 {
+  width: 70%;
+}
+
 body {
-  font-family: 'Montserrat', helvetica, arial, sans-serif;
   background-color: var(--bg-light);
+  font-family: 'Montserrat', helvetica, arial, sans-serif;
+  height: 100vh;
 }
 
 #app {
-  align-items: center;
   display: flex;
   flex-direction: column;
   height: 100%;
-  justify-content: center;
   padding-left: 25px;
   padding-right: 25px;
   -webkit-box-pack: center;
@@ -44,19 +64,6 @@ body {
   margin-right: 30px;
 }
 
-/* .contribute-link {
-  text-decoration: none;
-  padding: 10px;
-  display: inline-block;
-  font-weight: 500;
-  font-size: 16px;
-  border-radius: 3px;
-  background-color: rgb(56, 43, 95);
-  color: white;
-  padding: 10px 20px;
-  cursor: pointer;
-} */
-
 .header {
   color: var(--blue);
   font-size: 25px;
@@ -73,7 +80,6 @@ body {
   align-items: center;
   margin-top: 20px;
   width: 100%;
-  /* max-width: 768px; */
 }
 
 .ct-converter {
@@ -150,12 +156,18 @@ body {
   font-size: 12px;
 }
 
-/*Cards*/
-.cards {
+
+/*Cards */
+
+.ct-cards {
+  width: 100%;
+}
+
+.card {
   background: #fefefe;
   border-radius: 15px;
   box-shadow: 0 10px 30px 0 rgb(24 28 33 / 12%);
-  width: inherit;
+  /* width: inherit; */
   position: relative;
   display: flex;
   flex-direction: column;
@@ -189,6 +201,7 @@ body {
   margin-top: 3rem;
 }
 
+/* Tables */
 .table {
   width: 100%;
 }
@@ -208,41 +221,11 @@ body {
   font-size: 14px;
 }
 
-.wd-30 {
-  width: 30%;
+@media screen and (max-width: 939px) {
+  .card-sint {
+    overflow: scroll;
+  }
+  .card-exam {
+    overflow: scroll;
+  }
 }
-
-.wd-20 {
-  width: 20%;
-}
-
-.wd-50 {
-  width: 50%;
-}
-
-.wd-70 {
-  width: 70%;
-}
-
-/* 
-.list {
-  padding: 0;
-  margin: 0;
-}
-
-.list-item {
-  display: flex;
-  border-radius: 6px;
-  margin-bottom: 15px;
-}
-
-.list-item span{
-  font-size: 15px;
-  font-weight: 500;
-  color: #353b48;
-}
-
-.item-date {
-  margin-right: 20px;
-} */
-
